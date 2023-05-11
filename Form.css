@@ -1,0 +1,52 @@
+.signup-bg{
+
+    background-color:white;
+    background-size: cover;
+    height: 100vh;
+}
+.span-head{
+    color: #0D0C26;
+    font-weight: lighter;
+    font-family: 'Roboto';
+    font-size: 60%;
+}
+.head{
+    color: #0D0C26;
+    font-family:'Roboto';
+    font-size: 25px;
+    font-weight: bold;
+}
+.form-bg{
+    background-color:#0D0C26; padding-left: 4%; padding-right: 4%; margin-bottom: 1%; padding-top: 1%;
+    
+}
+.label{
+    color: white; font-size: medium;
+}
+.signup-btn{
+    padding: 3px;
+    width:60%; background-color: #0D6EFD;
+    height: 30px; color: white; border-width: 0px; border-style: initial; margin-top: 5px; font-size: small;
+}
+.signupError{
+    color:orangered;
+    font-weight:400; font-size: small;
+}
+.placeclass::placeholder{
+    font-weight: lighter; font-size: smaller; 
+}
+.inputvalue{
+    width:100%; font-size: small;
+}
+.checkboxnote{
+    font-size: x-small; color: white; font-weight: lighter; margin-top: 15px;
+}
+.label1{
+    color: black; font-size: small; margin-left:0.5%; font-weight: 400;
+}
+.checkboxnote1{
+    font-size: small; color: white; font-weight:400 ;
+}
+.dynamicinput{
+    border-color: red; border-width: 1px; width:100%; font-size: small;
+}
