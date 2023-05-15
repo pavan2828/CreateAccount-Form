@@ -21,7 +21,7 @@
     
 }
 .label{
-    color: white; font-size: medium;
+    color: white; font-size: small;
 }
 .signup-btn{
     padding: 3px;
@@ -36,10 +36,10 @@
     font-weight: lighter; font-size: smaller; 
 }
 .inputvalue{
-    width:100%; font-size: small;
+    width:100%; font-size: small; padding-top: 3px;
 }
 .checkboxnote{
-    font-size: x-small; color: white; font-weight: lighter; margin-top: 15px;
+    font-size: x-small; color: white; font-weight: lighter; margin-top:15px;
 }
 .label1{
     color: black; font-size: small; margin-left:0.5%; font-weight: 400;
@@ -49,4 +49,11 @@
 }
 .dynamicinput{
     border-color: red; border-width: 1px; width:100%; font-size: small;
+}
+.errorbg{
+    background-color: white;
+    text-align: center;
+    margin-top: 3px;
+    border-width: 2px;
+    border-color: cyan;
 }
