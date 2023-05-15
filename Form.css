@@ -51,7 +51,7 @@
     border-color: red; border-width: 1px; width:100%; font-size: small;
 }
 .errorbg{
-    background-color: white;
+    background-color: yellow;
     text-align: center;
     margin-top: 1px;
     border-width: 2px;
