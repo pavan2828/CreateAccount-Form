@@ -17,20 +17,21 @@
                 <form>
                     <label class="label" for="email">Email</label> 
                     <br/>
-                    <input id="email" class="inputvalue" value="" placeholder="Email address"/>
+                    <input id="email" class="inputvalue" type="email" value="" placeholder="Email address"/>
                     <br/>
                     <label class="label" for="password">Password</label>
                     <br/>
                     <input  id="password" class="inputvalue" type="password" value="" placeholder="********" />
                     <br/>
-                    <input type="checkbox" value="" id="checkbox" class="ml-3"/>
+                    <div class="d-flex flex-row justify-content-right">
+                    <input type="checkbox" value="" id="checkbox" style="margin-right: 3px; margin-top: 1px;"/>
                     <label class="checkboxnote1" for="checkbox">Stay Login</label>
-                    <br />
+                    </div><br />
                     <div class="ml-auto text-center">
-                    <button id="loginbtn" class="text-center signup-btn" class=" signup-btn">Login</button>
+                    <button type="submit" id="loginbtn" class="text-center signup-btn" class=" signup-btn">Login</button>
                     </div>
-                    <div class="text-center">
-                        <p class="signupError" id="signup-error"></p>
+                    <div class="text-center errorbg">
+                        <p class="signupError" id="errorMsg"></p>
                     </div>
                 </form>
 
@@ -38,10 +39,47 @@
 
         </div>
         <div class="text-center d-flex flex-row justify-content-center">
-            <p class="label1">New user?</p><a href="index.html" class="label1">Create Account</a>
+            <p class="label1">New user?</p><a href="Signup.html" class="label1">Create Account</a>
         </div>
         </div>
     </div>
-<script src="Form.js"></script>
+    <script>
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const checkboxInput = document.getElementById('checkbox');
+        const registerButton = document.getElementById('loginbtn');
+        const errorMsg = document.getElementById('errorMsg');
+        
+        function validateEmail(email) {
+          const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return regex.test(email);
+        }
+        
+        registerButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          if ( emailInput.value === '' && passwordInput.value === '') {
+            errorMsg.textContent = 'All fields are required';
+            return;
+          }
+          if (passwordInput.value === '') {
+            errorMsg.textContent = 'Please enter password';
+          }
+          
+          if (!validateEmail(emailInput.value)) {
+            errorMsg.textContent = 'Please enter a valid email address';
+            return;
+          }
+        
+          if (!checkboxInput.checked) {
+            errorMsg.textContent = 'Please select stay login';
+            return;
+          }
+          // All validation checks passed, so submit the form
+          errorMsg.textContent = '';
+          alert('successfully logged');
+          document.querySelector('form').submit();
+        });
+        
+        </script>
 </body>
 </html>
