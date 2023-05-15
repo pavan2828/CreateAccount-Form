@@ -20,20 +20,20 @@
                     <label class="label" for="name">Name *</label><br/>
                     <input id="name" class="inputvalue" type="text" value=""  placeholder="Your full name" /><br />
                     <label class="label" for="email">Email *</label> <br/>
-                    <input id="email" type="text" value="" placeholder="Email address" class="inputvalue"/><br />
+                    <input id="email" type="email" value="" placeholder="Email address" class="inputvalue"/><br />
                     <small style="color: white ; font-weight: lighter; font-size:x-small;">we will never share these with anyone</small><br/>
                     <label class="label" for="password">Password *</label><br/>
                     <input class="inputvalue" id="password" type="password" value="" placeholder="********" /><br/>
                     <label class="label" for="confirmpassword">Confirm Password *</label><br/>
                     <input class="inputvalue"  id="confirmpassword" type="password" value="" placeholder="********" /><br />
-                    <input type="checkbox" style="margin-left: 3px;" value="" id="checkbox"/>
-                    <label class="checkboxnote" for="checkbox">By clicking these you're agreeing to the terms and conditions</label>
+                    <div class="d-flex flex-row justify-content-center mb-3"><input type="checkbox" style="margin-right: 5px;margin-top: 15px;" value="" id="checkbox"/>
+                    <label class="checkboxnote" for="checkbox">  By clicking these you're agreeing to the terms and conditions</label></div>
                     <div class="ml-auto text-center">
-                    <button class="text-center signup-btn" id="register">Create Account</button>
+                    <button class="text-center signup-btn" type="submit" id="register">Create Account</button>
                     </div>
                     
-                    <div class="text-center">
-                      <p id="errorMsg" style="font-weight: lighter;" class="signupError" id="signup-error"></p>
+                    <div class="text-center errorbg">
+                      <p id="errorMsg" class="signupError" id="signup-error"></p>
                     </div>
                 </form>
 
@@ -44,6 +44,47 @@
             </div>
         </div>
     </div>
-    <script src="Form.js"></script>
-</body>
-</html>
+    <script>const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+      const confirmPasswordInput = document.getElementById('confirmpassword');
+      const checkboxInput = document.getElementById('checkbox');
+      const registerButton = document.getElementById('register');
+      const errorMsg = document.getElementById('errorMsg');
+      
+      function validateEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+      }
+      
+      registerButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (nameInput.value === '' || emailInput.value === '' || passwordInput.value === '' || confirmPasswordInput.value === '') {
+          errorMsg.textContent = 'All fields are required';
+          return;
+        }
+        
+        if (!validateEmail(emailInput.value)) {
+          errorMsg.textContent = 'Please enter a valid email address';
+          return;
+        }
+        if (passwordInput.value.length < 8) {
+          errorMsg.textContent = 'Password must be at least 8 characters long';
+          return;
+        }
+        if (passwordInput.value !== confirmPasswordInput.value) {
+          errorMsg.textContent = 'Passwords do not match';
+          return;
+        }
+        if (!checkboxInput.checked) {
+          errorMsg.textContent = 'You must agree to the terms and conditions';
+          return;
+        }
+        // All validation checks passed, so submit the form
+        errorMsg.textContent = '';
+        alert('Form submitted!');
+        document.querySelector('form').submit();
+      });
+      
+      </script>
+
