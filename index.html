@@ -10,40 +10,39 @@
 <body>
 
    
-    <div class="container-fluid mt-4 signup-bgm-auto" >
-        <div class="row d-flex flex-column justify-content-center">
-            <div class=" text-center">
+    <div class="mt-4 d-flex flex-column justify-content-center  m-auto" >
+            <div class="text-center">
                 <h1 class="head">SIGNUP  <span class="span-head">FORM</span></h1>
         </div>
-        <div class="d-flex flex-row justify-content-center ">
-            <div class="form-bg" >
-                <form>
-                    <label class="label" for="name">Name *</label><br/>
-                    <input id="name" class="inputvalue" type="text" value=""  placeholder="Your full name" /><span class="error" id="nameE"></span><br>
-                    <label class="label" for="email">Email *</label> <br/>
-                    <input id="email" type="email" value="" placeholder="Email address" class="inputvalue"/><span class="error" id="emailE"></span><br />
-                    <small style="color: white ; font-weight: lighter; font-size:x-small;">we will never share these with anyone</small><br/>
-                    <label class="label" for="password">Password *</label><br/>
-                    <div class="password-container"><input class="inputvalue" id="password" type="password" value="" placeholder="********" /><i id="view" class="fa-solid fa-eye"></i></div><span class="error" id="passwordE"></span><div></div>
-                    <label class="label" for="confirmpassword">Confirm Password *</label><br/>
-                    <input class="inputvalue"  id="confirmpassword" type="text" value="" placeholder="********" /><span class="error" id="confirmPasswordE"></span><br />
+        
+            <div class="form-bg m-auto" >
+                <form class="pb-3">
+                  <div class="d-flex flex-column justify-content-center">
+                    <label class="label" for="name">Name *</label>
+                    <input id="name" class="inputvalue" type="text" value=""  placeholder="Your full name" />
+                    <span class="error" id="nameE"></span>
+                    <label class="label" for="email">Email *</label>
+                    <input id="email" type="email" value="" placeholder="Email address" class="inputvalue"/><span class="error" id="emailE"></span>
+                    <small style="color: white ; font-weight: lighter; font-size:x-small;">we will never share these with anyone</small>
+                    <label class="label" for="password">Password *</label>
+                    <div class="password-container"><input class="inputvalue" id="password" type="password" value="" placeholder="********" /><i id="view" class="fa-solid fa-eye"></i></div><span class="error" id="passwordE"></span>
+                    <label class="label" for="confirmpassword">Confirm Password *</label>
+                    <input class="inputvalue"  id="confirmpassword" type="text" value="" placeholder="********" /><span class="error" id="confirmPasswordE"></span>
                     <div class="d-flex flex-row justify-content-center mb-3"><input type="checkbox" style="margin-right: 5px;margin-top: 15px;" value="" id="checkbox"/>
                     <label class="checkboxnote" for="checkbox">  By clicking these you're agreeing to the terms and conditions</label></div>
                     <div class="ml-auto text-center">
                     <button class="text-center signup-btn" type="submit" id="register">Create Account</button>
-                    </div>
-                    
-                    <div  class="text-center errorbg">
+                  </div>
+                    <div id="bb" class="text-center">
                       <p id="errorMsg" class="signupError" id="signup-error"></p>
                     </div>
-                </form>
 
+                </form>
             </div>
-        </div>
-            <div class="text-center d-flex flex-row justify-content-center">
+    </div>
+            <div class="text-center mt-3 d-flex flex-row justify-content-center">
                 <p class="label1">Already have an account?</p><a href="login.html" class="label1">login</a>
             </div>
-        </div>
     </div>
     <script>const nameInput = document.getElementById('name');
       const emailInput = document.getElementById('email');
@@ -187,6 +186,7 @@
         }
         if (!checkboxInput.checked) {
           errorMsg.textContent = 'You must agree to the terms and conditions';
+          
           return;
         } else{
           errorMsg.textContent = '';

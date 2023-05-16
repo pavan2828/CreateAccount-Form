@@ -17,7 +17,7 @@
     font-weight: bold;
 }
 .form-bg{
-    background-color:#0D0C26; padding-left: 4%; padding-right: 4%; margin-bottom: 1%; padding-top: 1%;
+    background-color:#0D0C26; padding-left: 4%; padding-right: 4%; margin-bottom: 1%; padding-top: 1%; background-size: cover; width:fit-content;
     
 }
 .label{
@@ -97,7 +97,7 @@
     position: absolute;
     top: 24%;
     right: 4%;
-    color: #0D0C26;
+    color:#0D0C26;
     height: 40%;
 }
 
