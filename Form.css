@@ -29,12 +29,13 @@
     height: 30px; color: white; border-width: 0px; border-style: initial; margin-top: 5px; font-size: small;
 }
 .signupError{
-    color:orangered;
-    font-weight:400; font-size: small;
+    color:green;
+    font-weight:400; font-size: small; font-style:inherit;
 }
-.placeclass::placeholder{
-    font-weight: lighter; font-size: smaller; 
+::placeholder{
+    font-weight: lighter; font-size: smaller; color:black;
 }
+
 .inputvalue{
     width:100%; font-size: small; padding-top: 3px;
 }
@@ -50,10 +51,53 @@
 .dynamicinput{
     border-color: red; border-width: 1px; width:100%; font-size: small;
 }
-.errorbg{
-    background-color: green;
-    text-align: center;
-    margin-top: 1px;
-    border-width: 2px;
-    border-color: cyan;
+.np::placeholder{ color: red; opacity: 90%;
 }
+.ep::placeholder{
+    color: red; opacity: 90%;
+}
+.pp::placeholder{
+    color: red; opacity: 90%;
+}
+.cpp::placeholder{
+    color: red; opacity: 90%;
+}
+
+.errorbg{
+    background-color: white;
+    text-align: center;
+    margin-top: 3%;
+    border-width: 0px;
+    border-style: hidden;
+
+    
+}
+.error{
+    color: red; font-size: small; font-weight:400; opacity: 60%;
+}
+.textcolor{
+    color: red;
+}
+.fa-eye{
+    position: absolute;
+    top: 24%;
+    right: 4%;
+    color: lightgray;
+    height: 40%;
+}
+.password-container{
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+}
+.break{
+    display: none;
+}
+.fa-eye-slash{
+    position: absolute;
+    top: 24%;
+    right: 4%;
+    color: lightgray;
+    height: 40%;
+}
+

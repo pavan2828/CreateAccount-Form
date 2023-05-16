@@ -3,29 +3,30 @@
 
 <head>
     <link href="Form.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/cda88752d6.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 
 <body>
 
    
-    <div class="container-fluid signup-bg mt-5 m-auto" >
+    <div class="container-fluid mt-4 signup-bgm-auto" >
         <div class="row d-flex flex-column justify-content-center">
-            <div class=" col-12 text-center">
+            <div class=" text-center">
                 <h1 class="head">SIGNUP  <span class="span-head">FORM</span></h1>
         </div>
-        <div class="d-flex flex-row justify-content-center col-12 ">
+        <div class="d-flex flex-row justify-content-center ">
             <div class="form-bg" >
                 <form>
                     <label class="label" for="name">Name *</label><br/>
-                    <input id="name" class="inputvalue" type="text" value=""  placeholder="Your full name" /><br />
+                    <input id="name" class="inputvalue" type="text" value=""  placeholder="Your full name" /><span class="error" id="nameE"></span><br>
                     <label class="label" for="email">Email *</label> <br/>
-                    <input id="email" type="email" value="" placeholder="Email address" class="inputvalue"/><br />
+                    <input id="email" type="email" value="" placeholder="Email address" class="inputvalue"/><span class="error" id="emailE"></span><br />
                     <small style="color: white ; font-weight: lighter; font-size:x-small;">we will never share these with anyone</small><br/>
                     <label class="label" for="password">Password *</label><br/>
-                    <input class="inputvalue" id="password" type="password" value="" placeholder="********" /><br/>
+                    <div class="password-container"><input class="inputvalue" id="password" type="password" value="" placeholder="********" /><i id="view" class="fa-solid fa-eye"></i></div><span class="error" id="passwordE"></span><div></div>
                     <label class="label" for="confirmpassword">Confirm Password *</label><br/>
-                    <input class="inputvalue"  id="confirmpassword" type="password" value="" placeholder="********" /><br />
+                    <input class="inputvalue"  id="confirmpassword" type="text" value="" placeholder="********" /><span class="error" id="confirmPasswordE"></span><br />
                     <div class="d-flex flex-row justify-content-center mb-3"><input type="checkbox" style="margin-right: 5px;margin-top: 15px;" value="" id="checkbox"/>
                     <label class="checkboxnote" for="checkbox">  By clicking these you're agreeing to the terms and conditions</label></div>
                     <div class="ml-auto text-center">
@@ -51,35 +52,146 @@
       const checkboxInput = document.getElementById('checkbox');
       const registerButton = document.getElementById('register');
       const errorMsg = document.getElementById('errorMsg');
+
+      // Error messages 
+      
+
+      const nameE = document.getElementById('nameE');
+
+      let viewE = document.getElementById('view');
+
+      viewE.onclick = function(){
+        viewE.classList.toggle('fa-eye');
+        viewE.classList.toggle('fa-eye-slash');
+        if(passwordInput.type == 'text'){
+          passwordInput.type = 'password';
+        }
+        else{
+          passwordInput.type = 'text';
+        }
+      }
+
       
       function validateEmail(email) {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return regex.test(email);
+
       }
+
+      nameInput.addEventListener('blur',function(n){
+        if (nameInput.value ==='' ){
+          nameE.textContent = 'Enter your name';
+          nameInput.classList.add('np');
+        }
+        else{
+          nameInput.classList.remove('np');
+          nameE.textContent = '';
+        }
+      });
+
+      emailInput.addEventListener('blur',function(n){
+        if (!validateEmail(emailInput.value) ){
+          emailE.textContent = 'Please enter valid email address';
+          emailInput.classList.add('ep');
+          emailInput.classList.add('textcolor');
+          
+        }
+        else{
+          emailInput.classList.remove('ep');
+          emailE.textContent = '';
+          emailInput.classList.remove('textcolor');
+        }
+      });
+
+      passwordInput.addEventListener('blur',function(n){
+
+        if (passwordInput.value.length >=1 && passwordInput.value.length<6) {
+          passwordE.textContent = 'Password must be at least 6 characters long';
+          passwordInput.classList.add('pp');
+          passwordInput.classList.add('textcolor');
+          
+
+        }
+        else if (passwordInput.value.length === 0) {
+          passwordE.textContent = 'Please enter password';
+          passwordInput.classList.add('pp');
+        }
+        else{
+          passwordE.textContent = '';
+          passwordInput.classList.remove('pp');
+          passwordInput.classList.remove('textcolor');
+        }
+      });
+
+      confirmPasswordInput.addEventListener('blur',function(n){
+        if (passwordInput.value !== confirmPasswordInput.value) {
+          confirmPasswordE.textContent = 'Passwords do not match';
+          confirmPasswordInput.classList.add('cpp');
+          confirmPasswordInput.classList.add('textcolor');
+        }
+        else{
+          confirmPasswordInput.classList.remove('cpp');
+          confirmPasswordE.textContent = '';
+          confirmPasswordInput.classList.remove('textcolor');
+        }
+
+      });
+
+    
+
+
       
       registerButton.addEventListener('click', function(e) {
         e.preventDefault();
-        if (nameInput.value === '' || emailInput.value === '' || passwordInput.value === '' || confirmPasswordInput.value === '') {
-          errorMsg.textContent = 'All fields are required';
-          return;
+        
+        if (nameInput.value === '' ){
+          nameE.textContent = 'Enter your name';
+          nameInput.classList.add("np");
+
+        }
+        else{
+          nameE.textContent = '';
+          nameInput.classList.add('np');
         }
         
         if (!validateEmail(emailInput.value)) {
-          errorMsg.textContent = 'Please enter a valid email address';
-          return;
+          emailE.textContent = 'Please enter a valid email address';
+          emailInput.classList.add('ep');
         }
-        if (passwordInput.value.length < 8) {
-          errorMsg.textContent = 'Password must be at least 8 characters long';
-          return;
+        else{
+          emailE.textContent = '';
+          emailInput.classList.remove('ep');
+        }
+        if (passwordInput.value.length < 6) {
+          passwordE.textContent = 'Password must be at least 6 characters long';
+          passwordInput.classList.add('pp');
+        }
+        else{
+          passwordE.textContent = '';
+          passwordInput.classList.remove('pp');
         }
         if (passwordInput.value !== confirmPasswordInput.value) {
-          errorMsg.textContent = 'Passwords do not match';
+          confirmPasswordE.textContent = 'Passwords do not match';
+          confirmPasswordInput.classList.add('cpp');
+          confirmPasswordInput.classList.add('textcolor')
+        }
+        else{
+          confirmPasswordInput.classList.remove('cpp');
+          confirmPasswordE.textContent = '';
+          confirmPasswordInput.classList.remove('textcolor');
+        }
+       
+        if (nameE.textContent !== '' || emailE.textContent !== '' || passwordE.textContent !== '' || confirmPasswordE.textContent !== '') {
           return;
+          
         }
         if (!checkboxInput.checked) {
           errorMsg.textContent = 'You must agree to the terms and conditions';
           return;
+        } else{
+          errorMsg.textContent = '';
         }
+
         // All validation checks passed, so submit the form
         errorMsg.textContent = '';
         alert('Form submitted!');
@@ -88,8 +200,7 @@
       
       </script>
 </body>
-</html>     
-
+</html> 
 
 
 
