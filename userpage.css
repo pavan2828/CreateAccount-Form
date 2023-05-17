@@ -1,0 +1,46 @@
+@media(min-width:768px){
+    .userdetail{
+        margin-top: 7%; margin-left: 27%; background-color: white;
+        
+    }
+}
+@media(max-width:767px){
+    .smallDevices{
+        margin-top: 7%; background-color: white;
+    }
+}
+    .userpagebg{
+         background-color: #0D0C26; background-size: cover; height: 100vh;
+     }
+     .profileImg{
+        width: 25%; position: relative; bottom: 45%; margin-top:10%;
+     }
+     .hs{
+        color:deepskyblue; position: relative; bottom: 40%; font-size:large;
+     }
+     h6{
+        color: darkgreen; position: relative;
+     }
+     span{
+        color: lightseagreen;
+     }
+
+    
+     .s1{
+         right: 4%; bottom: 50%;
+     }
+     .s2{
+        position: relative; right: 2%; bottom: 10%; bottom: 10%;
+     }
+     .s3{
+        position: relative;
+     }
+     #d{
+        position: relative; bottom: 25%;
+     }
+     #logout{
+        position:relative; bottom: 20%; color: dodgerblue;
+     }
+     #lg{
+        position: relative; color: darkblue;
+     }
