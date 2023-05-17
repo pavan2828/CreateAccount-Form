@@ -43,6 +43,7 @@
             <div class="text-center mt-3 d-flex flex-row justify-content-center">
                 <p class="label1">Already have an account?</p><a href="login.html" class="label1">login</a>
             </div>
+            <a id="homepage" href="homepage.html"></a>
     </div>
     <script>const nameInput = document.getElementById('name');
       const emailInput = document.getElementById('email');
@@ -51,6 +52,7 @@
       const checkboxInput = document.getElementById('checkbox');
       const registerButton = document.getElementById('register');
       const errorMsg = document.getElementById('errorMsg');
+      const homepage = document.getElementById('homepage');
 
       // Error messages 
       
@@ -194,8 +196,9 @@
 
         // All validation checks passed, so submit the form
         errorMsg.textContent = '';
-        alert('Form submitted!');
+        
         document.querySelector('form').submit();
+        window.location.href = 'homepage.html';
       });
       
       </script>
