@@ -4,7 +4,7 @@
     }
     
     .userpagebg{
-         background-color: #0D0C26; background-size: cover; height: 100vh; padding-top: 5%; position: absolute;
+         background-color: #0D0C26; background-size: cover; min-height: 100vh; padding-top: 5%; position: absolute;
      }
      .profileImg{
         width: 130px; margin: auto; display:block; padding-top:5%; position: relative; left: 35%; 
@@ -39,8 +39,9 @@
         position: relative; color: darkblue;
      }
      .tex1{
-      color: darkgrey; font-size: small; font-style:calc();
+      color: white; font-size: medium; font-style:inherit;
      }
      .userdata{
-
+        margin: auto; text-align: center; padding-top: 4%;
      }
+     
