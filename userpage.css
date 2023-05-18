@@ -38,3 +38,6 @@
      #lg{
         position: relative; color: darkblue;
      }
+     .tex1{
+      color: darkgrey; font-size: small; font-style:calc();
+     }
