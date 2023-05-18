@@ -17,8 +17,8 @@
     font-weight: bold;
 }
 .form-bg{
-    background-color:#0D0C26; padding-left: 4%; padding-right: 4%; margin-bottom: 1%; padding-top: 1%; background-size: cover; width:fit-content;
-    
+    background-color:#0D0C26; padding-left: 4%; padding-right: 4%; margin-bottom: 1%; padding-top: 1%; background-size:auto; display:inline-block; width: 35%;
+    margin: auto;
 }
 .label{
     color: white; font-size: small;
@@ -66,7 +66,7 @@
 .errorbg{
     background-color: white;
     text-align: center;
-    margin-top: 3%;
+    margin-top: 3%; 
     border-width: 0px;
     border-style: hidden;
 

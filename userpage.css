@@ -1,19 +1,13 @@
-@media(min-width:768px){
-    .userdetail{
-        margin-top: 7%; margin-left: 27%; background-color: white;
-        
+.userdetail{
+        margin: auto; background-color: white;  margin:auto;
+        display: block; padding: auto;
     }
-}
-@media(max-width:767px){
-    .smallDevices{
-        margin-top: 7%; background-color: white;
-    }
-}
+    
     .userpagebg{
-         background-color: #0D0C26; background-size: cover; height: 100vh;
+         background-color: #0D0C26; background-size: cover; height: 100vh; padding-top: 5%; position: absolute;
      }
      .profileImg{
-        width: 25%; position: relative; bottom: 45%; margin-top:10%;
+        width: 130px; margin: auto; display:block; padding-top:5%; position: relative; left: 5%;
      }
      .hs{
         color:deepskyblue; position: relative; bottom: 40%; font-size:large;
