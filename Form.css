@@ -17,7 +17,7 @@
     font-weight: bold;
 }
 .form-bg{
-    background-color:#0D0C26; padding-left: 4%; padding-right: 4%; margin-bottom: 1%; padding-top: 1%; background-size:auto; display:inline-block; width: 35%;
+    background-color:#0D0C26; padding-left: 4%; padding-right: 4%; margin-bottom: 1%; padding-top: 1%; background-size:auto; display:block; width: 35%;
     margin: auto;
 }
 .label{
@@ -103,6 +103,9 @@
 .homepage-bg{
     background-color: #0D0C26;
     color: white; background-size: cover; width: 100%;
+}
+.formc{
+    display: block;
 }
 
 
