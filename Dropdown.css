@@ -1,0 +1,53 @@
+.img1{
+    width:2.5vw; height: 4vh; margin-right: 30%;
+}
+
+
+
+.menu{
+    background-color:green;
+    background-size: cover; font-family: sans-serif; overflow:auto;
+    
+
+}
+.menu ul{
+    margin-left: auto;
+    display: inline-flex;
+    box-sizing: border-box; 
+    
+    
+}
+.menu ul li{
+     list-style: none; width:15vw; display: inline-block; text-align: center; margin: 3px; padding: 4px,2px,4px,2px;
+}
+.menu ul li a {
+    text-decoration: none; color: white;
+}
+.active, .menu ul li:hover {
+    background: #2bab2b;
+    border-radius: 3px;
+}
+
+.fa-user{
+    color: white;  position: relative; margin:10%; left: 10%;
+}
+
+
+.profile-img{
+    width: 40px ; height: 35px; padding-left: 10px;
+}
+.fa-arrow-right-from-bracket{
+    color: white;
+}
+.sub-menu{ 
+    background-color:green; margin-top: 2px; display:inline-block; position:relative; width:15%; left:80%; border-top-left-radius:10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;
+}
+.sub-menu ul{
+     margin: 20%;
+}
+.sub-menu ul li{
+    list-style: none; color: white;
+}
+
+
+
