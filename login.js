@@ -96,5 +96,5 @@ const emailInput = document.getElementById('email');
         // All validation checks passed, so submit the form
         errorMsg.textContent = '';
         document.querySelector('form').submit();
-        window.location.href = 'userpage.html';
+        window.location.href = 'Dropdown.html';
       });
