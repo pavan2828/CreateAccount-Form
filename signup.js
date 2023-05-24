@@ -179,7 +179,7 @@ function submitFormData(formData) {
       localStorage.setItem('userData', JSON.stringify(jsonData));
       window.location.href = 'Dropdown.html';
     });
-
+    
 
 
     alert('successfuly submitted');

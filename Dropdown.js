@@ -15,6 +15,8 @@ userE.textContent = parseData.name;
 D_id.textContent = parseData.id;
 D_name.textContent = parseData.name;
 
+console.log(parseData);
+
   
 
 
